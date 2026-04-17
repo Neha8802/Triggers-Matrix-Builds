@@ -17,8 +17,8 @@ jobs:
       - name: get current user running the job
         run: whoami
 
-   windows-os-workflow: 
-       runs-on: windows-latest
+    windows-os-workflow: 
+      runs-on: windows-latest
 
       steps:
        - name: print os name
@@ -40,8 +40,8 @@ jobs:
         - name: get host name
           run:  hostname
 
-          - name: get the user running the job
-            run: whoami
+        - name: get the user running the job
+          run: whoami
             run: whoami
         
 
