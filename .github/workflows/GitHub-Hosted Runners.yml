@@ -17,6 +17,18 @@ jobs:
 
       - name: get current user running the job
         run: whoami
+
+      - name: get docker version
+        run: docker --version
+
+      - name: get python version
+        run: python --version
+
+      - name: get node vresion
+        run: node --version
+
+      - name: get git version
+        run: git --version
     
 
   windows-job: 
