@@ -3,6 +3,7 @@ name: multiple jobs workflow
 on:
   push:
 
+#job 1
 jobs:
   ubuntu-os-workflow:
     runs-on: ubuntu-latest
@@ -16,8 +17,9 @@ jobs:
 
       - name: get current user running the job
         run: whoami
+    
 
-    windows-os-workflow: 
+  windows-job: 
       runs-on: windows-latest
 
       steps:
@@ -30,19 +32,17 @@ jobs:
        - name: get current user running the job
          run: whoami
 
-      mac-os-workflow:
-       runs-on: macos-latest
 
-      steps:
-        - name: print name of os
-          run: echo "The operating system is ${{ runner.os }}"
+  mac-os-workflow:
+    runs-on: macos-latest
 
-        - name: get host name
-          run:  hostname
+    steps:
+      - name: print name of os
+        run: echo "The operating system is ${{ runner.os }}"
 
-        - name: get the user running the job
-          run:  whoami
+      - name: get host name
+        run:  hostname
+
+      - name: get the user running the job
+        run:  whoami
         
-
-
-    windows-os-workflow:
