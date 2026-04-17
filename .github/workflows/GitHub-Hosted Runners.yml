@@ -17,30 +17,31 @@ jobs:
       - name: get current user running the job
         run: whoami
 
-    windows-os-workflow: 
+   windows-os-workflow: 
        runs-on: windows-latest
 
-         steps:
-           - name: print os name
-              run: echo "The operating system is ${{ runner.os }}"
+      steps:
+       - name: print os name
+         run: echo "The operating system is ${{ runner.os }}"
 
-          - name: print hostname
-            run: hostname
+       - name: print hostname
+         run: hostname
 
-          - name: get current user running the job
-            run: whoami
+       - name: get current user running the job
+         run: whoami
 
       mac-os-workflow:
        runs-on: macos-latest
 
-         steps:
-           - name: print name of os
-             run: echo "The operating system is ${{ runner.os }}"
+      steps:
+        - name: print name of os
+          run: echo "The operating system is ${{ runner.os }}"
 
-           - name: get host name
-             run:  hostname
+        - name: get host name
+          run:  hostname
 
           - name: get the user running the job
+            run: whoami
             run: whoami
         
 
