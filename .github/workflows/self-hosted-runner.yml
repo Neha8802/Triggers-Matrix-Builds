@@ -11,11 +11,11 @@ jobs:
       - name: print the hostname
         run: hostname
 
-      - name: print curent working directory
+      - name: print current working directory
         run:  cd
 
       - name: create a file 
-        run: echo hello > my.file.txt
+        run: ew-Item myfile.txt -ItemType File
 
-      - name: verify the file exist 
-        run: dir 
+      - name: verify the file exists 
+        run: Test-Path myfile.txt 
