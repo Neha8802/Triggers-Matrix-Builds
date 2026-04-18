@@ -1,7 +1,7 @@
 name: multiple jobs workflow
 
 on:
-  push:
+  workflow_dispatch:
 
 #job 1
 jobs:
