@@ -8,6 +8,10 @@ jobs:
     runs-on: self-hosted
 
     steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: print the hostname
         run: hostname
 
