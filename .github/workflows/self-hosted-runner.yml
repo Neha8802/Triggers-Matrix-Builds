@@ -1,0 +1,21 @@
+name: self hosted workflow
+
+on: 
+  push:
+
+jobs:
+  self-hosted-workflow:
+    runs-on: self-hosted
+
+    steps:
+      - name: print the hostname
+        run: hostname
+
+      - name: print curent working directory
+        run:  cd
+
+      - name: create a file 
+        run: echo hello > my.file.txt
+
+      - name: verify the file exist 
+        run: dir 
