@@ -9,17 +9,14 @@ jobs:
 
     steps:
 
-      - name: Checkout code
-        uses: actions/checkout@v4
-
       - name: print the hostname
         run: hostname
 
       - name: print current working directory
-        run:  cd
+        run:  get location
 
       - name: create a file 
-        run: ew-Item myfile.txt -ItemType File
+        run: echo creating file -Path "C:\github_test_file.txt"
 
       - name: verify the file exists 
-        run: Test-Path myfile.txt 
+        run: ls C:\github_test_file.txt
