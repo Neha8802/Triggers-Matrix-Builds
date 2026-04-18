@@ -1,22 +1,26 @@
-name: self hosted workflow
+name: Windows Self-Hosted Demo
 
-on: 
-  push:
+on:
+  workflow_dispatch: # Allows you to run this manually from the Actions tab
 
 jobs:
-  self-hosted-workflow:
+  check-my-hardware:
+    # This tells GitHub to look for your local machine
     runs-on: self-hosted
 
     steps:
-
-      - name: print the hostname
+      - name: 1. Print Hostname
         run: hostname
 
-      - name: print current working directory
-        run:  get location
+      - name: 2. Print Working Directory
+        run: pwd
 
-      - name: create a file 
-        run: echo creating file -Path "C:\github_test_file.txt"
+      - name: 3. Create a test file
+        shell: powershell
+        run: |
+          $content = "This file was created by GitHub Actions at $(Get-Date)"
+          Set-Content -Path "C:\github_test_file.txt" -Value $content
+          Write-Host "File created at C:\github_test_file.txt"
 
-      - name: verify the file exists 
+      - name: 4. Verify file exists (from Runner's perspective)
         run: ls C:\github_test_file.txt
