@@ -1,7 +1,7 @@
 name: self hosted workflow
 
 on:
-  push:
+  workflow_dispatch: 
 
 jobs:
   linux-self-hosted-runner:
