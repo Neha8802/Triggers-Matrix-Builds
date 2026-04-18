@@ -23,9 +23,9 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
 
-  steps:
-    - name: print deploying
-      run: echo print deploying 
+    steps:
+      - name: print deploying
+        run: echo print deploying 
 
     
 
