@@ -21,6 +21,6 @@ jobs:
 
     steps:
       - name: print the date 
-        run: echo "needs.job-output.outputs.todays"
+        run: echo "${{ needs.job-output.outputs.todays }}"
     
    
