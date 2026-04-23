@@ -29,6 +29,7 @@ jobs:
             echo "This is a MAIN branch push"
           else
             echo "This is a FEATURE branch push"
+            fi
 
 
       - name: print commit message
