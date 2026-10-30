@@ -1,0 +1,16 @@
+name: trigger job at every monday at 9AM
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+jobs:
+   specific_schedule_trigger:
+
+     runs-on: ubuntu-latest
+
+     steps:
+       - name: print the vm name
+         run: hostname
+
