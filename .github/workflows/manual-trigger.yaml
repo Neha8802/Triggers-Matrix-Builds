@@ -1,0 +1,22 @@
+name: manual trigger
+
+on: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target env to deploy (staging/prod)'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - prod
+
+jobs:
+  manual_trigeer:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: print the choosen env
+        run: echo ' deploying to target environment "${{ github.event.inputs.environment }}"'
+          
