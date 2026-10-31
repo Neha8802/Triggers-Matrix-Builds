@@ -22,4 +22,4 @@ jobs:
         run: echo "failing on purpose for failfast test" && exit 1
 
       - name: test python version
-        run: pyhton --version
+        run: python --version
