@@ -1,0 +1,25 @@
+name: fail-fast-yaml
+
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.10","3.11", "3.12"]
+ 
+    steps:
+      - name: python setup
+        run: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+           
+      - name: intentionally failing job
+        if: matrix.python-version == '3.10'
+        run: echo "failing on purpose for failfast test" && exit 1
+
+      - name: test python version
+        run: pyhton --version
