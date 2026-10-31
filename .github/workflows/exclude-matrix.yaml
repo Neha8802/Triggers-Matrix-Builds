@@ -4,21 +4,23 @@ on: workflow_dispatch
 
 jobs: 
   test:
-    runs-on: $ {{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest, ubuntu slim]
         python-version: ["3.10", "3.11", "3.12"]
 
         exclude:
-          - os: [ubuntu-lates]
+          - os: [ubuntu-latest]
             python-version: [3.10]
 
 
     steps:
       - name: setup python
         uses: action/setup-python@v5
+        with:
+          python-version: ${{matrix.python-version}}
 
       - name: print python version
-        run: python-version
+        run: python--version
           
