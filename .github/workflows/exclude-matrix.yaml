@@ -17,10 +17,10 @@ jobs:
 
     steps:
       - name: setup python
-        uses: action/setup-python@v5
+        uses: actions/setup-python@v5
         with:
           python-version: ${{matrix.python-version}}
 
       - name: print python version
-        run: python--version
+        run: python --version
           
